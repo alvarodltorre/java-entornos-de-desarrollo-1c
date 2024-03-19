@@ -1,16 +1,10 @@
-
+package modelos;
 import java.util.*;
 
 /**
  * 
  */
 public class Rectangulo {
-
-    /**
-     * Default constructor
-     */
-    public Rectangulo() {
-    }
 
     /**
      * 
