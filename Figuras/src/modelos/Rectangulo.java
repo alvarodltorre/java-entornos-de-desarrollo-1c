@@ -1,10 +1,11 @@
 package modelos;
-import java.util.*;
 
 /**
+ * Clase Rectangulo. Permite crear rectangulos y calcular su area y perimetro
  * 
+ * @author Alvaro
  */
-public class Rectangulo {
+public class Rectangulo extends Figura{
 
     /**
      * 
@@ -17,9 +18,7 @@ public class Rectangulo {
     private int altura;
 
     /**
-     * Constructor por defecto.
-     * @param base 
-     * @param altura
+     * Constructor por defecto. Crea un rectangulo con base y altura 1, en metros.
      */
     public Rectangulo() {
         this.base = 1;
@@ -27,61 +26,49 @@ public class Rectangulo {
     }
 
     /**
-     * Constructor por defecto = 1..
-     * @param base 
-     * @param altura
+     * Constructor que crea un rectangulo con la base y la altura especificadas, en metros.
+     * @param base 		la base del rectangulo, en metros
+     * @param altura	la altura del rectangulo, en metros	
      */
     public Rectangulo(int base, int altura) {
     	this.base = base;
         this.altura = altura;
     }
 
-    /**
-     * Modifica la base del rectangulo.
-     * @param base
-     */
+
     public void setBase(int base) {
     	this.base = base;
     }
 
-    /**
-     * Devuelve la base del rectangulo.
-     * @return
-     */
+
     public int getBase() {
         return this.base;
     }
 
-    /**
-     * Modifica la altura de la persona.
-     * @param altura
-     */
+
     public void setAltura(int altura) {
         this.altura = altura;
     }
 
-    /**
-     * Devuelve la altura del rectangulo.
-     * @return
-     */
+    
     public int getAltura() {
         return this.altura;
     }
 
     /**
-     * Metodo que muestra el area del rectangulo.
-     * @return
+     * @see modelos.Figura#area()
      */
-    public int mostrarArea() {
-        return this.base*this.altura;
-    }
+	@Override
+	public double area() {
+		return this.base * this.altura;
+	}
 
-    /**
-     * Metodo que muestra el perimetro del rectangulo.
-     * @return
+	/**
+     * @see modelos.Figura#perimetro()
      */
-    public int mostrarPerimetro() {
-        return this.base+this.base+this.altura+this.altura;
-    }
+	@Override
+	public double perimetro() {
+		return 2*base + 2* altura;
+	}
 
 }
