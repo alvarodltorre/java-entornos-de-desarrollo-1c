@@ -16,6 +16,6 @@ public abstract class Algoritmos {
 		}
 		
 		
-		return 0;
+		return suma;
 	}
 }
