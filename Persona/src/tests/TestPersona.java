@@ -64,6 +64,17 @@ class TestPersona {
 	}
 	
 	/**
+	 * Comprueba que una persona de 130 anios se muestra como jubilada.
+	 */
+	@Test
+	void testPersonaEdad130() {
+		Persona p = new Persona("nombre", "apellidos", 130);
+		String esperado = "Jubilado";
+		String obtenido = p.mostrarEdad();
+		assertEquals(esperado, obtenido);
+	}
+	
+	/**
 	 * Comprueba que al intentar instanciarse una persona con edad negativa se lanza 
 	 * la excepcion esperada.
 	 */
@@ -77,4 +88,17 @@ class TestPersona {
 		assertEquals(esperado, obtenido);
 	}
 	
+	/**
+	 * Comprueba que al intentar instanciarse una persona con edad superior a la aceptada (130) se lanza 
+	 * la excepcion esperada.
+	 */
+	@Test
+	void testPersonaEdadInvalida131() {
+		Exception e = assertThrows(IllegalArgumentException.class,
+				() -> new Persona("nombre", "apellidos", 131));
+		
+		String esperado = "La edad debe estar entre 0 y 130.";
+		String obtenido = e.getMessage();
+		assertEquals(esperado, obtenido);
+	}
 }
