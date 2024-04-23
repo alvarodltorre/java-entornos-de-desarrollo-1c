@@ -16,6 +16,15 @@ class TestAlgoritmos {
 	}
 	
 	@Test
+	void sumatorioParamIncorrecto() {
+		Exception e = assertThrows(IllegalArgumentException.class,
+				() -> Algoritmos.sumatorio(-1));
+		String esperado = ("El numero debe ser igual o superior a 00.");
+		String obtenido = e.getMessage();
+		assertEquals(esperado, obtenido);
+	}
+	
+	@Test
 	void factorial() {
 		int factorialEsperado = 6;
 		int factorialObtenido = Algoritmos.sumatorio(3);
